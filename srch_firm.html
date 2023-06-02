@@ -1,0 +1,43 @@
+<?php 
+
+require 'config.php';
+
+$condition = "";
+
+$conn = connection();
+// echo $_POST['name']; die;
+if(isset($_POST['name']) && $_POST['name']!=""){
+	$condition.=" and firm_name like '".$_POST['name']."%'";
+}
+$sql = "SELECT * FROM firm WHERE 0=0 $condition ORDER BY firm_name ASC";
+$data = $conn->query($sql);
+$conn=null;
+?>
+
+<table class="table table-condensed table-hover table-bordered table-striped">
+	<thead>
+		<tr>
+			<th><center>S. no.</center></th>
+			<th><center>Name</center></th>
+			<th><center>Description</center></th>
+			<th><center>Phone</center></th>
+			<th><center>Address</center></th>
+			<th><center></center></th>
+			<th><center></center></th>
+		</tr>
+	</thead>
+	<tbody style="color:black;">
+		<?php $s=0;
+		foreach ($data as $row){ $s++; ?>
+		<tr>
+			<td><center></center></td>
+			<td>'firm_name</td>
+			<td>'firm_des</td>
+			<td>'firm_no</td>
+			<td>'firm_add</td>
+			<td><center><button data-toggle="modal" data-target="#edit-firm" class="btn btn-space md-trigger " style="float: center;background-color:#30A9DE;color:white;" onclick="edit_firm('firm_id'"><i class="icon icon-left mdi mdi-eyedropper"></i></button><center></td>
+            <td><center><a href="delete-firm.php?firm_id="firm_id"];?>" class="btn btn-space md-trigger" style="float: center;background-color:red;color:white;"><i class="icon icon-left mdi mdi-close"></i></a><center></td> 
+		</tr>
+		<?php   } ?>
+	</tbody>
+</table>

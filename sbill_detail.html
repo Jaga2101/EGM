@@ -1,0 +1,66 @@
+<?php
+require_once("configd.php");
+?>
+<button id="noprint" style="background-color:lightblue;color:black;width:100px;height:28px;border:none;border-radius:20px;font-weight:bold;" ><a href="show_seller_bill.html" style="text-decoration:none;">&#11013 Back</a></button>
+<button id="noprint" onclick="prints()" style="background-color:lightgreen;color:black;width:100px;height:28px;border:none;border-radius:20px;"> Print </button> 
+<center>
+<table>
+    <tr>
+        <th><img src="one1.png" alt="error" style="width:50px;height:40px;border-radius:10px;">&nbsp;</th>
+        <th><p style="font-size:25px">Easy Garments</p></th>
+    </tr>
+</table>
+
+                <h3> Dates report from <font color="#30A9DE"> 01-06-2023 </font> to <font color="#30A9DE"> 01-06-2023</font></h3>
+<table class="table table-condensed table-hover table-bordered table-striped" style="width: 80%;">
+          <thead style="color:#30A9DE">
+            <tr>
+              <th><center>S.No</center></th>
+              <th><center>Bill No.</center></th>
+              <th><center>Name</center></th>
+              <th><center>Total Amount</center></th>
+              <th><center>Transport Charge</center></th>
+              <th><center>Entry Date</center></th>
+              
+            </tr>
+          </thead>
+          <tbody style="color:black;">
+        
+            <tr>
+              <td><Center> 1</Center></td>
+					<td><Center>T-Shirt</Center></td>
+					<td><Center>30</Center></td>
+					<td><Center>10</Center></td>
+					<td><Center>100</Center></td>
+					<td><Center>1000</Center></td>
+            </tr>
+          
+   
+          </tbody>
+        </table>
+        <br>
+        <br>
+        
+                </center>
+        </span>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<script>
+function prints(){
+  
+  window.print();
+  
+}
+</script>
+
+<style>
+	 @media print{
+               #noprint {
+                  display:none;
+               }
+            }
+</style>
+ 

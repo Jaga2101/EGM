@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image" href="one.png">
+    <title>Easy Garments</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" type="text/css" href="perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="material-design-iconic-font.min.css">
+</head>
+<body>
+    
+</body>
+</html>
+<header>
+    <img src="one.png" alt="error" style="width:50px;height:40px;border-radius:10px;">&nbsp;
+         Easy Garments
+      </header>
+      <div class="nav-bar" id="noprint">
+  <ul>
+                  <br>
+                  <li><a id="dash" onclick="dash();"> Dashboard</a></li>
+                
+                    <li><a id="emp" onclick="emp();"> Employee Detail</a></li>
+                
+                  <li><a id="sup" onclick="sup();"> Supplier Detail</a></li>
+                
+                    <li><a id="firm" onclick="firm();"> Company Section</a></li>
+        
+                    <li><a id="cat" onclick="cat();"> Categories</a></li>
+    
+                    <li><a id="ty" onclick="ty();"> Measurement</a></li>
+                  
+                    <li><a id="pro" onclick="pro();"> Product Details</a></li>
+                  
+                    <li><a id="st" onclick="st();"> Stock Details</a></li>
+            
+                    <li><a id="pro_list" onclick="pro_list();"> Price List</a></li>
+                  
+                    <li><a id="bill" onclick="bill();"> Supplier Billing</a></li>
+                  
+                    <li><a id="sbill" onclick="sbill();"> Seller Billing</a></li>
+                
+                    <li><a id="sb" onclick="sb();"> Supplier Report</a></li>
+        
+                    <li><a id="show_seller_bill" onclick="show_seller_bill();"> Seller Report</a></li>
+        
+                    <li><a id="inlo" onclick="inlo();"> Logout</a></li>
+                  </ul>
+            <script src="dsh.js"></script>
+      </div>
+      
+  
+        <div class="be-content">
+          
+          <div class="main-content container-fluid">
+            <!--PAGE CONTENT -->
+            <div id="output">
+    
+ 
+<br><br>  <div class="col-sm-12"><br>
+    <div class="panel panel-default panel-table" id="container">
+      <div class="panel-heading text-center"><strong>STOCK DETAILS</strong>
+          <button  onclick="prints()" id="noprint" style="background-color:lightgreen;color:black;width:100px;height:28px;border:none;border-radius:20px;float:right;"><i class="icon icon-left mdi mdi-print"></i>Print</button><br>  
+      <div class="panel-body">
+        <span id="srch_pro">
+          <table class="table table-condensed table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th><center>S. no.</center></th>
+                <th><center>Company</center></th>
+                <th><center>Category</center></th>
+                <th><center>Type</center></th>
+                <th><center>Quantity</center></th>
+                <th><center>Status</center></th>
+              </tr>
+            </thead>
+            <tbody style="color:black;">
+              <?php $s=0;
+              foreach ($data as $row){ $s++; ?>
+              <tr>
+                <td><center>1</center></td>
+                <td>Balaji Garments</td>
+                <td>Casual & Formal Pants</td>
+                <td>30</td>
+                <td>0</td>
+                <td><span style='color:red;'>Out of stock</span></td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </span>
+    </div>
+			</div>
+	</div>
+</div>
+
+
+
+<script>
+function prints(){
+  
+  window.print();
+  
+}
+</script>
+
+<style>
+	 @media print{
+               #noprint {
+                  display:none;
+               }
+            }
+</style>

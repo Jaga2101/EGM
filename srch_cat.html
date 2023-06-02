@@ -1,0 +1,43 @@
+<?php 
+
+require 'config.php';
+
+$condition = "";
+
+$conn = connection();
+// echo $_POST['name']; die;
+if(isset($_POST['sname']) && $_POST['sname']!=""){
+	$condition.=" and cat_name like '".$_POST['sname']."%'";
+}
+if(isset($_POST['sdes']) && $_POST['sdes']!=""){
+	$condition.=" and cat_des like '".$_POST['sdes']."%'";
+}
+$sql = "SELECT *  FROM `category` WHERE 0=0 $condition";
+$data = $conn->query($sql);
+$conn=null;
+?>
+<table class="table table-condensed table-hover table-bordered table-striped">
+	<thead>
+		<tr>
+			<th><center>S.No.</center></th>
+			<th><center>Name</center></th>
+			<th><center>Description</center></th>
+			<th></th>
+			<th></th>
+			<!--  <th><center>Status</center></th> -->
+		</tr>
+	</thead>
+
+	<tbody style="color:black;">
+		<?php $s=0;
+		foreach ($data as $row){ $s++; ?>
+		<tr>
+			<td><center></center></td>
+			<td>'cat_name</td>
+			<td>'cat_des</td>              
+			<td id="noprint"><center><button data-toggle="modal" data-target="#edit-cat" class="btn btn-space md-trigger " style="float: center;background-color:#30A9DE;color:white;" onclick="edit_cat('cat_id'"><i class="icon icon-left mdi mdi-eyedropper"></i></button><center></td>
+              <td id="noprint"><center><a href="delete-cat.php?cat_id="cat_id"];?>" class="btn btn-space md-trigger" style="float: center;background-color:red;color:white;"><i class="icon icon-left mdi mdi-close"></i></a><center></td> 
+		</tr>
+		<?php   } ?>
+	</tbody>         
+</table>

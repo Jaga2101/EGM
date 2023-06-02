@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image" href="one.png">
+    <title>Easy Garments</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" type="text/css" href="perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="material-design-iconic-font.min.css">
+</head>
+<body>
+    
+</body>
+</html>
+<header>
+    <img src="one.png" alt="error" style="width:50px;height:40px;border-radius:10px;">&nbsp;
+         Easy Garments
+      </header>
+      <div class="nav-bar" id="noprint">
+  <ul>
+                  <br>
+                  <li><a id="dash" onclick="dash();"> Dashboard</a></li>
+                
+                    <li><a id="emp" onclick="emp();"> Employee Detail</a></li>
+                
+                  <li><a id="sup" onclick="sup();"> Supplier Detail</a></li>
+                
+                    <li><a id="firm" onclick="firm();"> Company Section</a></li>
+        
+                    <li><a id="cat" onclick="cat();"> Categories</a></li>
+    
+                    <li><a id="ty" onclick="ty();"> Measurement</a></li>
+                  
+                    <li><a id="pro" onclick="pro();"> Product Details</a></li>
+                  
+                    <li><a id="st" onclick="st();"> Stock Details</a></li>
+            
+                    <li><a id="pro_list" onclick="pro_list();"> Price List</a></li>
+                  
+                    <li><a id="bill" onclick="bill();"> Supplier Billing</a></li>
+                  
+                    <li><a id="sbill" onclick="sbill();"> Seller Billing</a></li>
+                
+                    <li><a id="sb" onclick="sb();"> Supplier Report</a></li>
+        
+                    <li><a id="show_seller_bill" onclick="show_seller_bill();"> Seller Report</a></li>
+        
+                    <li><a id="inlo" onclick="inlo();"> Logout</a></li>
+                  </ul>
+            <script src="dsh.js"></script>
+      </div>
+      
+  
+        <div class="be-content">
+          
+          <div class="main-content container-fluid">
+            <!--PAGE CONTENT -->
+            <div id="output">
+    
+ 
+<!-- MODAL CLOSE -->
+<div class="col-md-12">
+	<div class="col-md-12">
+		<div class="panel panel-full-color panel-primary">
+			<div class="panel-heading panel-heading-contrast" style="background-color: #30A9DE;text-align: center;margin-top:50px;color:black;"><strong>SELLER BILLING</strong>
+				<div class="tools"><span class="icon mdi"></span></div><span class="panel-subtitle"></span>
+			</div>
+		</div>
+	</div>
+	
+	<form type="POST" action="seller_billing.php" onsubmit="calc_amt();">
+		<div class="col-sm-12">
+			<div class="panel panel-default panel-table">
+				<div class="panel-heading ">
+					
+					<div class="col-md-6">
+						<div class="col-md-3">
+							<label style="font-size: 18px; "><strong>Name&nbsp;:</strong></label>
+						</div>
+						<div class="col-md-3" style="margin-left: -10%;">
+							<input type="text" name="bill_name" id="bill_name" value="" style="height: 25px;" required="">
+						</div>								
+					</div>
+					      
+				</div>
+				<div class="panel-body">
+					<span id="srch_ty">
+						
+						<table class="table table-condensed table-hover table-bordered table-striped">
+							<thead>
+								<tr>
+									<th><center>#</center></th>
+									<th><center>Company</center></th>
+									<th><center>Description</center></th>
+									<th><center>Size</center></th>
+									<th><center>Qty Req.</center></th>
+									<th><center>Rate</center></th>
+									<th><center>Amount</center></th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Balaji Garments</td>
+									<td>T-Shirt</td>
+									<td>30</td>
+									<td>10</td>
+									<td>100</td>
+									<td>1000</td>
+								</tr>
+							</thead>
+							<tbody style="color:black;">
+								<tr id="fetch_d_0">
+
+								</tr>
+							</tbody>
+						</table>
+						
+						&nbsp;
+						<input type="hidden" name="count" id="count" value="0">
+						<br>
+						
+						<br>
+						<input type="hidden" name="total_amt" id="total_amt" value="" required="">
+						<input type="hidden" name="bill_type" value="2">
+						<!-- <input type="submit" class="btn btn-space md-trigger btn-danger" name=""> -->
+						<div class="col-md-12">
+							<div class="col-md-6">
+								<div class="col-md-5">
+									<label style="font-size: 18px; ">Transport Charge&nbsp;:</label>
+								</div>
+								<div class="col-md-1">
+									<input type="text" name="tr_amt" id="tr_amt" class="form-control input-xs" value="0" style="width: 60px;" >
+								</div>
+								
+							</div>
+							<div class="col-md-2" style="margin-left: -12%">
+								<a class="btn btn-space md-trigger btn-primary" onclick="add_seller_row();" style="float: right;"><i class="icon icon-left mdi mdi-plus"></i>&nbsp;ADD PRODUCT</a>
+							</div>
+							<div class="col-md-2">
+								<button type="submit" style="width:146px;" class="btn btn-space md-trigger btn-success" formtarget="_blank" onclick="stock()">Print Bill</button> 
+							</div>
+						</div>
+						
+					</span>
+				</div>
+			</div>
+		</div>
+</form>
+</div>
+<script>
+	function stock(){
+window.location = "seller_billing.html";
+	}
+</script>

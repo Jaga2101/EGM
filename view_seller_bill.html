@@ -1,0 +1,88 @@
+
+<link rel="stylesheet" href="bill.css">
+<button id="noprint" style="background-color:lightblue;color:black;width:100px;height:28px;border:none;border-radius:20px;font-weight:bold;" ><a href="show_seller_bill.html" style="text-decoration:none;">&#11013 Back</a></button>
+<button id="noprint" onclick="prints()" style="background-color:lightgreen;color:black;width:100px;height:28px;border:none;border-radius:20px;"> Print </button> 
+<br>
+<br>       
+<div class="container" id="container">
+	<div class="brand-section">
+		<div class="row">
+			<div class="col-6">
+			<span><img src="one1.png" alt="error" style="width:55px;height:50px;border-radius:10px;"></span>
+				<h1 class="text-white"> Easy Garements</h1>
+			</div>
+			<div class="col-6">
+				<div class="company-details">
+					<p class="text-white">177/2,S.P.Pudhur,</p>
+					<p class="text-white">Paramathi Road,</p>
+					<p class="text-white">Namakkal-637 001.</p>
+					<p class="text-white">phone No: 9843622082</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="body-section">
+		<div class="row">
+			<div class="col-6">
+				<p class="sub-heading"><strong>&nbsp;Bill No&nbsp;: &nbsp;1</strong></p>
+				<p class="sub-heading"><strong>&nbsp; Name&nbsp;&nbsp;: &nbsp;Gowtham</strong></p>
+				<p class="sub-heading"><strong>&nbsp;&nbsp;   Date&nbsp;&nbsp;&nbsp;: &nbsp;01-06-2023</strong></p>
+			</div>
+		</div>
+	</div>
+	<div class="body-section">
+		<table class="table-bordered">
+			<thead>
+				<tr>
+				<th><strong>S. No.</strong></th>
+		       <th><strong>PRODUCTS</strong></th>
+		       <th><strong>SIZE</strong></th>
+		    <th><strong>QUANTITY</strong></th>
+		<th><strong>RATE</strong></th>
+		<th><strong>AMOUNT</strong></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>T-Shirt</td>
+					<td>30</td>
+					<td>10</td>
+					<td>100</td>
+					<td>1000</td>
+	</tr>
+	<tr>
+	
+		<td colspan="5" class="text-right"><strong>Transport Charge&nbsp; </strong></td>
+	    <td >0</td>
+	</tr>
+	<tr>
+	<td colspan="6" class="text-left"><strong>&nbsp;Rupees In Words&nbsp;:&nbsp;</strong><?php echo convertNumberToWordsForIndia($value['bill_amt']+$value['bill_tchrg</td><br>
+
+    </tr>
+	<tr>
+	<td colspan="5" class="text-right"><strong>&nbsp;Total&nbsp;:&nbsp;</strong></td>
+    <td><strong>1000</strong></td>	
+</tr>
+			</tbody>
+		</table>
+	</div>
+</div>	
+			</div>
+			<br>
+
+			<script>
+function prints(){
+  
+  window.print();
+  
+}
+</script>
+
+<style>
+	 @media print{
+               #noprint {
+                  display:none;
+               }
+            }
+</style>

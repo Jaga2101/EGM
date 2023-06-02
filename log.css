@@ -1,0 +1,132 @@
+body{
+    /* background-color: lightblue; */
+    background: white;
+    text-align: center;
+    margin: 50px;
+}
+.mobscr{
+	display: none;
+}
+h1{
+   color: black;
+}
+form{
+    position: fixed;
+    background-color: #30A9DE;
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+   border: outset;
+   align-items: center;
+  margin-left: 370px;
+  margin-top: 50px;
+   justify-content: space-between;
+}
+h4{
+    font-size: 18px;
+    font-style: italic;
+}
+input{
+    margin-top: 15px;
+   border-color: black;
+   border-radius: 50px;
+   width: 200px;
+   height: 20px;
+}
+button{
+   margin-top: 20px;
+   border-radius: 60px 40px 60px 40px;
+   background-color: black;
+   color: white;
+   width: 150px;
+   height: 25px;
+   cursor: pointer;
+   transition: 0.25s;
+   text-decoration: none;  
+}
+button:hover{
+   border-radius: 40px 60px 40px 60px;
+   letter-spacing: 0.5em;
+   background-color: black;
+   color:#30A9DE;
+   width: 160px;
+   height: 25px;
+}
+a{
+   text-decoration: none;
+   font-size: 13px;
+   font-style: italic;
+}
+.al{
+   text-decoration: none;
+   font-size: 13px; 
+   font-style: italic;   
+}
+.ro{
+    position: fixed;
+    margin: 20px 20px 20px 10px;   
+    margin-left: 350px;
+}
+.ro img{
+    width: 240px;
+    height: 310px;
+    /*border-radius: 80px 30px 100px 50px; */
+    /*border-radius: 90px 40px 80px 60px;*/
+    border-radius: 50px 30px;
+    animation: animate 1.5s alternate ease-in-out infinite;
+}
+.ro img:hover{
+    width: 350px;
+    height: 330px;
+    margin-left: 100px;
+    /*border-radius: 80px 30px 100px 50px; */
+    border-radius: 30px 50px;
+    animation: animate 1s alternate ease-in-out infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(90deg);
+    }
+}
+@media screen and (max-width:485px) {
+	body{
+		background-color: green;
+		margin-left: 40px;
+		margin-right: 40px;
+        margin-top: 150px;
+	}
+	.mobscr{
+		display: inline;
+		background-color: green;
+		width: 280px;
+		height: 300px;
+		
+	}
+	.mobhe{
+		font-size: 18px;
+		color: greenyellow;
+		text-align: center;
+	}
+	.mobhe span{
+		font-size: 18px;
+		color: white;
+	}
+	h3{
+		font-size: 15px;
+		color: white;
+		text-align: center;
+	}
+	.box{
+		display: none;
+	}
+	h2{
+		display: none;
+	}	
+}
+	

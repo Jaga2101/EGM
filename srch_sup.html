@@ -1,0 +1,43 @@
+<?php 
+
+require 'config.php';
+
+$condition = "";
+
+$conn = connection();
+// echo $_POST['name']; die;
+if(isset($_POST['name']) && $_POST['name']!=""){
+	$condition.=" and sup_name like '".$_POST['name']."%'";
+}
+$sql = "SELECT * FROM sup WHERE 0=0 $condition ORDER BY sup_name ASC";
+$data = $conn->query($sql);
+$conn=null;
+?>
+
+<table class="table table-condensed table-hover table-bordered table-striped">
+	<thead>
+		<tr>
+			<th><center>S. no.</center></th>
+			<th><center>Name</center></th>
+			<th><center>Description</center></th>
+			<th><center>Phone</center></th>
+			<th><center>Address</center></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody style="color:black;">
+		<?php $s=0;
+		foreach ($data as $row){ $s++; ?>
+		<tr>
+			<td><center></center></td>
+			<td>'sup_name</td>
+			<td>'sup_des</td>
+			<td>'sup_no</td>
+			<td>'sup_add</td>
+			<td id="noprint"><center><button data-toggle="modal" data-target="#edit-sup" class="btn btn-space md-trigger " style="float: center;background-color:#30A9DE;color:white;" onclick="edit_sup('sup_id'"><i class="icon icon-left mdi mdi-eyedropper"></i></button><center></td>
+              <td id="noprint"><center><button class="btn btn-space md-trigger " style="float: center;background-color:red;color:white;"><a href="delete-sup.php?sup_id="sup_id"];?>" style="float: center;background-color:red;color:white;"><i class="icon icon-left mdi mdi-close"></i></a></button><center></td> 
+		</tr>
+		<?php   } ?>
+	</tbody>
+</table>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image" href="one.png">
+    <title>Easy Garments</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" type="text/css" href="perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="material-design-iconic-font.min.css">
+</head>
+<body>
+    
+</body>
+</html>
+<header>
+    <img src="one.png" alt="error" style="width:50px;height:40px;border-radius:10px;">&nbsp;
+         Easy Garments
+      </header>
+      <div class="nav-bar" id="noprint">
+  <ul>
+                  <br>
+                  <li><a id="dash" onclick="dash();"> Dashboard</a></li>
+                
+                    <li><a id="emp" onclick="emp();"> Employee Detail</a></li>
+                
+                  <li><a id="sup" onclick="sup();"> Supplier Detail</a></li>
+                
+                    <li><a id="firm" onclick="firm();"> Company Section</a></li>
+        
+                    <li><a id="cat" onclick="cat();"> Categories</a></li>
+    
+                    <li><a id="ty" onclick="ty();"> Measurement</a></li>
+                  
+                    <li><a id="pro" onclick="pro();"> Product Details</a></li>
+                  
+                    <li><a id="st" onclick="st();"> Stock Details</a></li>
+            
+                    <li><a id="pro_list" onclick="pro_list();"> Price List</a></li>
+                  
+                    <li><a id="bill" onclick="bill();"> Supplier Billing</a></li>
+                  
+                    <li><a id="sbill" onclick="sbill();"> Seller Billing</a></li>
+                
+                    <li><a id="sb" onclick="sb();"> Supplier Report</a></li>
+        
+                    <li><a id="show_seller_bill" onclick="show_seller_bill();"> Seller Report</a></li>
+        
+                    <li><a id="inlo" onclick="inlo();"> Logout</a></li>
+                  </ul>
+            <script src="dsh.js"></script>
+      </div>
+      
+  
+        <div class="be-content">
+          
+          <div class="main-content container-fluid">
+            <!--PAGE CONTENT -->
+            <div id="output">
+    
+ 
+<!-- MODAL OPEN -->
+<div id="form-bp1" tabindex="-1" role="dialog" class="modal fade colored-header colored-header-dark">
+  <div class="modal-dialog custom-width" style="height:200px;">
+    <div class="modal-content" style="width:800px;">
+      <div class="modal-header" style="background-color: #30A9DE;">
+        <div class="col-md-12">
+          <div class="col-md-6">
+            <h3 class="modal-title"><strong>SUPPLIER BILL</strong></h3>
+          </div>
+          <div class="col-md-6">
+            <div class="btn-group btn-space" style="float: right;">
+            <button class="btn btn-space md-trigger btn-danger" style="background-color:lightgreen;color:black;width:100px;height:28px;border:none;border-radius:20px;" onclick="mprints();" formtarget="_blank"><i class="icon icon-left mdi mdi-assignment"></i>&nbsp;Print</button>&nbsp;
+              <button type="button" class="close" data-dismiss="modal" style="width: 50px;height:30px;float:right;background-color:white;color:black;border-radius:20px;"><a href="http://localhost/EGM/index.php"><i class="icon icon-left mdi mdi-close"></i></a></button>                                           
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <span id="view_bill">
+          
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL CLOSE -->
+
+<div class="col-md-12">
+  <div class="col-md-12">
+    <div class="panel panel-full-color panel-primary" id="noprint">
+      <div class="panel-heading panel-heading-contrast" style="background-color: #30A9DE;text-align: center;margin-top:50px;color:black;"><strong>SUPPLIER BILLING DETAILS</strong>
+       
+      </div>
+      <div class="panel-body" style="background-color: white">
+        <div class="col-md-4">    
+          <label class="control-label panel-subtitle" style="color:black;font-size:15px;">Search by Name</label>      
+          <input type="text" placeholder="Enter Name..." id="sfirm_name" onkeyup="srch_showbill();" class="form-control input-xs">    
+        </div>
+        <!-- <div class="col-md-4">    
+          <label class="control-label panel-subtitle" style="color:white;">Search by GSTIN</label>      
+          <input type="text" placeholder="Enter GSTIN" id="gstin" onkeyup="srch_showbill();" class="form-control input-xs">    
+        </div> -->
+        <div class="col-md-4">    
+          <label class="control-label panel-subtitle" style="color:black;font-size:15px;">Search by Bill no.</label>      
+          <input type="text" placeholder="Enter bill no." id="bill_no" onkeyup="srch_showbill();" class="form-control input-xs">    
+        </div>
+        <div class="col-md-3" >
+          <label class="control-label ">&nbsp;</label><br>
+          <button  onclick="prints()" style="background-color:lightgreen;color:black;width:100px;height:28px;border:none;border-radius:20px;"><i class="icon icon-left mdi mdi-print"></i>Print</button>  
+        </div> 
+        </div>
+        <form action="bill_detail.html" method="post"  style="display:flex;padding:5px;">
+        
+        <label style="color:black;font-size:18px;margin-left:30px;">From Date</label>      
+        <input type="date" name="fromdate" id="fromdate" style="width:200px;height:30px;margin-left:15px;border-color:#30A9DE;" required >   
+        <label style="color:black;font-size:18px;margin-left:35px;">To Date</label>      
+        <input type="date" name="todate" id="todate" style="width:200px;height:30px;margin-left:25px;border-color:#30A9DE;" required >     
+        <button  type="submit" name="submit" style="background-color:#30A9DE;margin-left:15px;color:black;width:100px;height:28px;border:none;border-radius:20px">Submit</button>
+      
+      </form>
+      </div>
+    </div>
+
+  <div class="col-sm-12">
+    <div class="panel panel-default panel-table">
+      <div class="panel-heading text-center"><strong>SUPPLIER BILL DETAILS</strong></div>
+      <div class="panel-body">
+        <span id="srch_showbill">
+        <table class="table table-condensed table-hover table-bordered table-striped">
+          <thead>
+            <tr>
+              <th><center>S.No</center></th>
+              <th><center>Bill No.</center></th>
+              <th><center>Supplier Detail</center></th>
+              <th><center>Total Amount</center></th>
+              <th><center>Transport Charge</center></th>
+              <th><center>Entry Date</center></th>
+              <th id="noprint"><center></center></th>
+            </tr>
+          </thead>
+          <tbody style="color:black;">
+            
+            <tr>
+              <td><center>1</center></td>
+              <td><center><strong>1</strong></center></td>
+              <td><center>Balaji</center> </td>
+              <td><strong><center>1000</center> </strong></td>
+              <td><center> 0</center></td>
+              <td><center>01-06-2023</center> </td>
+              <td id="noprint"><center><button data-toggle="modal"  onclick="openForm()" class="btn btn-danger text-center" style="background-color:#30A9DE;border:none;">View</button></center></td>
+            </tr>
+           
+          </tbody>
+        </table>
+        </span>
+      </div>
+    </div>
+  </div>  
+</div>
+<script>
+  function openForm(){
+    
+    window.location="view_bill.html";
+    
+  }
+  </script>
+<script>
+function prints(){
+  
+  window.print();
+  
+}
+</script>
+
+<style>
+	 @media print{
+               #noprint {
+                  display:none;
+               }
+            }
+</style>
+ 

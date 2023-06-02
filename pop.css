@@ -1,0 +1,67 @@
+.form-popup{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    margin-left: 200px;
+    bottom: 130px;
+
+}
+.form-container {
+    padding-left: 20px;
+    width: 350px;
+    height: 400px;
+    background: yellow;
+    color: black;
+    border-radius: 30px;
+}
+.form-container h1{
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.form-container input{
+    width: 330px;
+    height: 30px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+}
+.form-container .btn1{
+    background: rgb(224, 71, 10);
+    color: white;
+    width: 330px;
+    height: 30px;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    border: none;
+    cursor: pointer;
+}
+.form-container .btn1:hover{
+    background:green;
+    color: white;
+    width: 330px;
+    height: 30px;
+    border-radius: 40px;
+    margin-bottom: 25px;
+    border: none;
+    cursor: pointer;
+}
+.form-container .btn-cancel{
+    background:red;
+    color: white;
+    width: 330px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+.form-container .btn-cancel:hover{
+    background: rgb(17, 186, 253);
+    color: white;
+    width: 330px;
+    height: 30px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+}
